@@ -6,7 +6,7 @@
 #    By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/27 13:05:00 by manmarti          #+#    #+#              #
-#    Updated: 2021/05/03 11:12:54 by manmarti         ###   ########.fr        #
+#    Updated: 2021/05/03 17:58:51 by manmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	@gcc -Wall -Wextra -Werror test.c $(NAME) 
-	@./a.out
-
-.PHONY: all
+.PHONY: all clean fclean re 

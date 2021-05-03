@@ -6,7 +6,7 @@
 /*   By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 15:29:06 by manmarti          #+#    #+#             */
-/*   Updated: 2021/05/03 13:44:07 by manmarti         ###   ########.fr       */
+/*   Updated: 2021/05/03 17:39:08 by manmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,11 @@ void	put_intprecision(char **str, t_flags *flags)
 
 void	int_flags(char **str, t_flags *flags)
 {
+	if (flags->width < 0)
+	{
+		flags->width *= -1;
+		flags->ljustify = 1;
+	}
 	if (flags->are_prc == 1)
 	{
 		put_intprecision(str, flags);
@@ -99,7 +104,6 @@ void	int_flags(char **str, t_flags *flags)
 	}
 	else
 	{
-		printf("");
 		put_intwidth(str, flags);
 	}
 }
