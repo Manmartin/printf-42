@@ -6,7 +6,7 @@
 /*   By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 14:00:51 by manmarti          #+#    #+#             */
-/*   Updated: 2021/05/03 15:09:29 by manmarti         ###   ########.fr       */
+/*   Updated: 2021/05/05 12:45:34 by manmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int	put_str(char id, va_list *args, t_flags *flags)
 		str = pointer_maker(va_arg(*args, unsigned long int), id, flags);
 	else
 		str = va_arg(*args, char *);
-	if (str == 0)
+	if (str == 0 && id == 's')
 		str = ft_strdup("(null)");
-	else
+	else if (id == 's')
 		str = ft_strdup(str);
 	str_flags(id, &str, flags);
 	if (str)
