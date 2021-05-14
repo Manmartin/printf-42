@@ -25,11 +25,13 @@ typedef struct s_flags
 	int		width;
 	int		are_prc;
 	int		precision;
+	int		count;
 }	t_flags;
 
 void	flag_detector(const char **fmt, t_flags *flags, va_list *args);
-int		put_chr(char id, va_list *args, t_flags *flags);
 
+void		store_account(va_list *args, t_flags *flags);
+int		put_chr(char id, va_list *args, t_flags *flags);
 int		put_str(char id, va_list *args, t_flags *flags);
 int		put_int(va_list *args, t_flags *flags);
 int		put_uint(char id, va_list *args, t_flags *flags);
